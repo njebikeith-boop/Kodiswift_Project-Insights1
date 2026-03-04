@@ -587,6 +587,18 @@ const PostDetailPage = () => {
         <h1 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
           {post.title}
         </h1>
+        
+        {post.imageUrl && (
+          <div className="aspect-[21/9] rounded-3xl overflow-hidden bg-gray-100 shadow-sm border border-gray-100">
+            <img 
+              src={post.imageUrl} 
+              alt={post.title} 
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+
         <div className="flex items-center gap-4 pt-6 border-t border-gray-50">
           <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-black text-sm">
             {post.author[0]}
